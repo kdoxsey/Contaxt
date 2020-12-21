@@ -1,6 +1,6 @@
 
-import React from 'react'
-import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
+import React, { useState } from 'react'
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import * as parksData from './../../data/national-parks.json'
 
 const markerPosition = { lat: 44.427963, lng: -110.588455 }
@@ -21,6 +21,8 @@ const places = [{
 }]
 
 function Map () {
+  const [selectedPark, setSelectedPark] = useState(null)
+
   return (
     <GoogleMap
       defaultZoom={5}
@@ -33,9 +35,25 @@ function Map () {
             lat: park.Latitude,
             lng: park.Longitude
           }}
+          onClick={() => {
+            setSelectedPark(park)
+          }}
         />
-      ))
-      }
+      ))}
+
+      {selectedPark && (
+        <InfoWindow
+          position={{
+            lat: selectedPark.Latitude,
+            lng: selectedPark.Longitude
+          }}
+          onCloseClick={() => {
+            setSelectedPark(null)
+          }}
+        >
+          <p>{selectedPark.LocationName}</p>
+        </InfoWindow>
+      )}
     </GoogleMap>
   )
 }
