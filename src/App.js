@@ -1,8 +1,8 @@
 // import React, { Component, Fragment } from 'react'
 import React from 'react'
-import Map from './../src/components/Contact/ContactMap'
+import ContactMap from './../src/components/Contact/ContactMap'
 
 function App () {
-  return <Map />
+  return <ContactMap />
 }
 export default App

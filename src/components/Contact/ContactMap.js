@@ -1,19 +1,47 @@
 
 import React from 'react'
-import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps'
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
+
+const markerPosition = { lat: 44.427963, lng: -110.588455 }
+console.log(markerPosition)
+
+const places = [{
+  name: 'Bossa nova Civic Club',
+  latitude: 40.697980,
+  longitude: -73.927980
+}, {
+  name: 'Sunrise Deli',
+  latitude: 40.697910,
+  longitude: -73.925090
+}, {
+  name: 'Varity Coffee Roasters',
+  latitude: 40.702650,
+  longitude: -73.917110
+}]
 
 function Map () {
   return (
     <GoogleMap
-      defaultZoom={10}
-      defaultCenter={{ lat: 44.427963, lng: -110.588455 }}
-    />
+      defaultZoom={5}
+      defaultCenter={{ lat: places[0].latitude, lng: places[0].longitude }}
+    >
+      {places.map(place => (
+        <Marker
+          key={place.name}
+          position={{
+            lat: place.latitude,
+            lng: place.longitude
+          }}
+        />
+      ))
+      }
+    </GoogleMap>
   )
 }
 
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 
-export default function Home () {
+export default function ContactMap () {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <WrappedMap
