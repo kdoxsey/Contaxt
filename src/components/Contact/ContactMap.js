@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
+import * as parksData from './../../data/national-parks.json'
 
 const markerPosition = { lat: 44.427963, lng: -110.588455 }
 console.log(markerPosition)
@@ -25,12 +26,12 @@ function Map () {
       defaultZoom={5}
       defaultCenter={{ lat: places[0].latitude, lng: places[0].longitude }}
     >
-      {places.map(place => (
+      {parksData.map(park => (
         <Marker
-          key={place.name}
+          key={park.LocationNumber}
           position={{
-            lat: place.latitude,
-            lng: place.longitude
+            lat: park.Latitude,
+            lng: park.Longitude
           }}
         />
       ))
