@@ -51,7 +51,13 @@ function Map () {
             setSelectedPark(null)
           }}
         >
-          <p>{selectedPark.LocationName}</p>
+          <div>
+            <h3>{
+              selectedPark.LocationName}
+            </h3>
+            <h5>{selectedPark.City}, {selectedPark.State}</h5>
+            <p>{selectedPark.Address}</p>
+          </div>
         </InfoWindow>
       )}
     </GoogleMap>
