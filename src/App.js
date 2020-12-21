@@ -6,6 +6,7 @@ import Header from './../src/components/Header/Header'
 function App () {
   return <div>
     <Header />
+    <ContactMap />
   </div>
 }
 export default App
