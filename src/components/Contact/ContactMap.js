@@ -3,30 +3,27 @@ import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import * as parksData from './../../data/national-parks.json'
 
-const markerPosition = { lat: 44.427963, lng: -110.588455 }
-console.log(markerPosition)
-
-const places = [{
-  name: 'Bossa nova Civic Club',
-  latitude: 40.697980,
-  longitude: -73.927980
-}, {
-  name: 'Sunrise Deli',
-  latitude: 40.697910,
-  longitude: -73.925090
-}, {
-  name: 'Varity Coffee Roasters',
-  latitude: 40.702650,
-  longitude: -73.917110
-}]
+// const places = [{
+//   name: 'Bossa nova Civic Club',
+//   latitude: 40.697980,
+//   longitude: -73.927980
+// }, {
+//   name: 'Sunrise Deli',
+//   latitude: 40.697910,
+//   longitude: -73.925090
+// }, {
+//   name: 'Varity Coffee Roasters',
+//   latitude: 40.702650,
+//   longitude: -73.917110
+// }]
 
 function Map () {
   const [selectedPark, setSelectedPark] = useState(null)
 
   return (
     <GoogleMap
-      defaultZoom={5}
-      defaultCenter={{ lat: places[0].latitude, lng: places[0].longitude }}
+      defaultZoom={4}
+      defaultCenter={{ lat: 37.0902, lng: -95.7129 }}
     >
       {parksData.map(park => (
         <Marker
