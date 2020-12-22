@@ -65,6 +65,7 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
+
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -76,6 +77,7 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
+
             <Form.Group controlId="passwordConfirmation">
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control
