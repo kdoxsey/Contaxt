@@ -1,42 +1,38 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
+import ContactCard from './../Card/ContactCard'
 
-import axios from 'axios'
-import apiUrl from '../../apiConfig'
+import { indexContacts } from './../../api/contact'
 
-class ContactIndex extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      contacts: null
-    }
+const ContactIndex = (props) => {
+  const [contacts, setContacts] = useState(null)
+  const { user, msgAlert } = props
+  useEffect(() => {
+    indexContacts(user)
+      .then(res => setContacts(res.data.contacts))
+      .catch(() => msgAlert({
+        heading: 'Index Fail',
+        message: 'Failed to index',
+        variant: 'danger'
+      }))
+  }, [])
+  if (!contacts) {
+    return <p>Loading...</p>
   }
 
-  componentDidMount () {
-    axios(apiUrl + '/contacts')
-      .then(console.log)
-      .catch(console.error)
-  }
-  render () {
-    return (
+  const contactIndex = contacts.map(contact => (
+    <ContactCard
+      key={contact._id}
+      item={contact}
+    />
+  ))
+  return (
+    <Fragment>
       <div>
-        <h2>contacts</h2>
-        <ul>
-          <li>contact 1</li>
-          <li>contact 2</li>
-          <li>contact 3</li>
-        </ul>
+        <h4>your contacts</h4>
+        {contactIndex}
       </div>
-    )
-  }
+    </Fragment>
+  )
 }
-// <div>
-//   <h2>list of contacts</h2>
-//   <ul>
-//     <li>contact 1</li>
-//     <li>contact 2</li>
-//     <li>contact 3</li>
-//   </ul>
-// </div>
 
 export default ContactIndex

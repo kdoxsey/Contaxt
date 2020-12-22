@@ -65,6 +65,10 @@ class App extends Component {
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
 
+          <AuthenticatedRoute user={user} path='/contacts' render={() => (
+            <ContactIndex msgAlert={this.msgAlert} user={user} />
+          )} />
+
           <AuthenticatedRoute user={user} path='/' component={ContactMap}/>
 
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
@@ -75,11 +79,7 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/tasks' render={() => (
-            <ContactIndex msgAlert={this.msgAlert} user={user} />
-          )} />
-
-          <AuthenticatedRoute user={user} path='/task-create' render={({ match }) => (
+          <AuthenticatedRoute user={user} path='/contact-create' render={({ match }) => (
             <ContactCreate msgAlert={this.msgAlert} match={match} user={user} />
           )} />
 
