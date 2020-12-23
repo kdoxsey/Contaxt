@@ -4,13 +4,11 @@ import ContactCard from './../Card/ContactCard'
 import { indexContacts } from './../../api/contact'
 
 const ContactIndex = (props) => {
-  const [contacts, setContacts, setMap] = useState(null)
+  const [contacts, setContacts] = useState(null)
   const { user, msgAlert } = props
   useEffect(() => {
     indexContacts(user)
       .then(res => setContacts(res.data.contacts))
-      .then(console.log('props is' + props))
-      .then(res => setMap(res.data.contacts))
       .catch(() => msgAlert({
         heading: 'Index Fail',
         message: 'Failed to index',
