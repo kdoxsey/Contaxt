@@ -37,7 +37,7 @@ function Map (props) {
               {selectedContact.lastName}, {selectedContact.firstName}
             </h3>
             <h5>{selectedContact.phoneNumber}</h5>
-            <h5>{selectedContact.emailAddress}</h5>
+            <a href={'mailto:' + selectedContact.emailAddress}>{selectedContact.emailAddress}</a>
             <p>{selectedContact.streetAddress}</p>
           </div>
         </InfoWindow>
