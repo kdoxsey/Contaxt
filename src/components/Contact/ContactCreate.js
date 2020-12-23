@@ -65,13 +65,61 @@ class ContactCreate extends Component {
     }
     return (
       <React.Fragment>
-        <h1>Add link here</h1>
+        <h1>new contact</h1>
         <form onSubmit={this.handleSubmit}>
           <input
-            placeholder="type here"
+            placeholder="first name"
             value={this.state.contact.firstName}
             onChange={this.handleChange}
             name='firstName'
+          />
+          <input
+            placeholder="last name"
+            value={this.state.contact.lastName}
+            onChange={this.handleChange}
+            name='firstName'
+          />
+          <input
+            placeholder="organization name"
+            value={this.state.contact.organizationName}
+            onChange={this.handleChange}
+            name='firstName'
+          />
+          <input
+            placeholder="email address"
+            value={this.state.contact.emailAddress}
+            onChange={this.handleChange}
+            name='firstName'
+          />
+          <input
+            placeholder="phone numbers"
+            value={this.state.contact.phoneNumber}
+            onChange={this.handleChange}
+            name='firstName'
+          />
+          <input
+            placeholder="street address"
+            value={this.state.contact.streetAddress}
+            onChange={this.handleChange}
+            name='firstName'
+          />
+          <input
+            placeholder="latitude"
+            value={this.state.contact.latitude}
+            onChange={this.handleChange}
+            name='firstName'
+          />
+          <input
+            placeholder="longitude"
+            value={this.state.contact.longitude}
+            onChange={this.handleChange}
+            name='firstName'
+          />
+          <input
+            placeholder="note"
+            value={this.state.contact.note}
+            onChange={this.handleChange}
+            name='note'
           />
           <button type='submit'>Submit</button>
         </form>

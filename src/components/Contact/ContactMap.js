@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import phoneIcon from './../Card/phone.png'
+import emailIcon from './../Card/email.png'
+import houseIcon from './../Card/house.png'
 
 function Map (props) {
   const [selectedContact, setSelectedContact] = useState(null)
@@ -36,9 +39,14 @@ function Map (props) {
             <h3>
               {selectedContact.lastName}, {selectedContact.firstName}
             </h3>
-            <h5>{selectedContact.phoneNumber}</h5>
-            <a href={'mailto:' + selectedContact.emailAddress}>{selectedContact.emailAddress}</a>
-            <p>{selectedContact.streetAddress}</p>
+            <img src={phoneIcon} alt='phone icon' className='contactIcon' />
+            <a href ={'tel:' + selectedContact.phoneNumber}>{selectedContact.phoneNumber}</a> <br />
+
+            <img src={emailIcon} alt='email icon' className='contactIcon' />
+            <a href={'mailto:' + selectedContact.emailAddress}>{selectedContact.emailAddress}</a> <br />
+
+            <img src={houseIcon} alt='' className='contactIcon' />
+            {selectedContact.streetAddress}
           </div>
         </InfoWindow>
       )}
