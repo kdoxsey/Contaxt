@@ -3,6 +3,9 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const ContactCard = ({ item }) => {
+  console.log(item._id)
+  console.log(item.firstName)
+  console.log(item.latitude)
   return (
     <Card>
       <Card.Body>
