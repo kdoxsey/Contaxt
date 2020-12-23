@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import ContactCard from './../Card/ContactCard'
+import ContactMap from './../Contact/ContactMap'
 
 import { indexContacts } from './../../api/contact'
 
@@ -25,11 +26,16 @@ const ContactIndex = (props) => {
       item={contact}
     />
   ))
+
+  console.log(contacts)
   return (
     <Fragment>
       <div>
         <h4>your contacts</h4>
         {contactIndex}
+        <ContactMap
+          contacts={contacts}
+        />
       </div>
     </Fragment>
   )
