@@ -10,7 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import ContactIndex from './components/Contact/ContactIndex'
-import ContactMap from './components/Contact/ContactMap'
+// import ContactMap from './components/Contact/ContactMap'
 import ContactCreate from './components/Contact/ContactCreate'
 
 class App extends Component {
@@ -69,7 +69,7 @@ class App extends Component {
             <ContactIndex msgAlert={this.msgAlert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/' component={ContactMap}/>
+          {/* <AuthenticatedRoute user={user} path='/' component={ContactMap}/> */}
 
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
