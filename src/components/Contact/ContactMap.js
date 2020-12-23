@@ -1,59 +1,44 @@
 
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
-import * as parksData from './../../data/national-parks.json'
-
-// const places = [{
-//   name: 'Bossa nova Civic Club',
-//   latitude: 40.697980,
-//   longitude: -73.927980
-// }, {
-//   name: 'Sunrise Deli',
-//   latitude: 40.697910,
-//   longitude: -73.925090
-// }, {
-//   name: 'Varity Coffee Roasters',
-//   latitude: 40.702650,
-//   longitude: -73.917110
-// }]
 
 function Map () {
-  const [selectedPark, setSelectedPark] = useState(null)
+  const [contact, selectedContact, setSelectedContact] = useState(null)
 
   return (
     <GoogleMap
       defaultZoom={4}
       defaultCenter={{ lat: 37.0902, lng: -95.7129 }}
     >
-      {parksData.map(park => (
-        <Marker
-          key={park.LocationNumber}
-          position={{
-            lat: park.Latitude,
-            lng: park.Longitude
-          }}
-          onClick={() => {
-            setSelectedPark(park)
-          }}
-        />
-      ))}
+      <Marker
+        key='1'
+        position={{
+          lat: 2,
+          lng: 2
+        }}
+        onClick={() => {
+          setSelectedContact(contact)
+        }}
+      />
+      ))
 
-      {selectedPark && (
+      {selectedContact && (
         <InfoWindow
           position={{
-            lat: selectedPark.Latitude,
-            lng: selectedPark.Longitude
+            lat: selectedContact.latitude,
+            lng: selectedContact.longitude
           }}
           onCloseClick={() => {
-            setSelectedPark(null)
+            setSelectedContact(null)
           }}
         >
           <div>
-            <h3>{
-              selectedPark.LocationName}
+            <h3>
+              {selectedContact.lastName}, {selectedContact.firstName}
             </h3>
-            <h5>{selectedPark.City}, {selectedPark.State}</h5>
-            <p>{selectedPark.Address}</p>
+            <h5>{selectedContact.phoneNumber}</h5>
+            <h5>{selectedContact.emailAddress}</h5>
+            <p>{selectedContact.streetAddress}</p>
           </div>
         </InfoWindow>
       )}
