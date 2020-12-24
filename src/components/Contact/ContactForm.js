@@ -8,82 +8,73 @@ const ContactForm = ({ contact, user, handleSubmit, handleChange, match }) => {
     return (
       <form onSubmit={handleSubmit}>
         <Form.Group controlId='contact'>
-          <Form.Label>First Name</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='First Name'
             value={contact.firstName}
             name="firstName"
             onChange={handleChange}
           />
 
-          <Form.Label>Last Name</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Last name'
             value={contact.lastName}
             name="lastName"
             onChange={handleChange}
           />
 
-          <Form.Label>Organization Name</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Business or Organization Name'
             value={contact.organizationName}
             name="organizationName"
             onChange={handleChange}
           />
 
-          <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Email Address'
             value={contact.emailAddress}
             name="emailAddress"
             onChange={handleChange}
           />
 
-          <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Phone Number'
             value={contact.phoneNumber}
             name="phoneNumber"
             onChange={handleChange}
           />
 
-          <Form.Label>Address</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Address'
             value={contact.streetAddress}
             name="streetAddress"
             onChange={handleChange}
           />
 
-          <Form.Label>Latitude</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Latitude'
             value={contact.latitude}
             name="latitude"
             onChange={handleChange}
           />
 
-          <Form.Label>Longitude</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Longitude'
             value={contact.longitude}
             name="longitude"
             onChange={handleChange}
           />
 
-          <Form.Label>Note</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Note'
             value={contact.note}
             name="note"
             onChange={handleChange}
@@ -101,82 +92,73 @@ const ContactForm = ({ contact, user, handleSubmit, handleChange, match }) => {
     return (
       <form onSubmit={handleSubmit}>
         <Form.Group controlId='contact'>
-          <Form.Label>First Name</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='First Name'
             value={contact.firstName}
             name="firstName"
             onChange={handleChange}
           />
 
-          <Form.Label>Last Name</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Last name'
             value={contact.lastName}
             name="lastName"
             onChange={handleChange}
           />
 
-          <Form.Label>Organization Name</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Business or Organization Name'
             value={contact.organizationName}
             name="organizationName"
             onChange={handleChange}
           />
 
-          <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Email Address'
             value={contact.emailAddress}
             name="emailAddress"
             onChange={handleChange}
           />
 
-          <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Phone Number'
             value={contact.phoneNumber}
             name="phoneNumber"
             onChange={handleChange}
           />
 
-          <Form.Label>Address</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Address'
             value={contact.streetAddress}
             name="streetAddress"
             onChange={handleChange}
           />
 
-          <Form.Label>Latitude</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Latitude'
             value={contact.latitude}
             name="latitude"
             onChange={handleChange}
           />
 
-          <Form.Label>Longitude</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Longitude'
             value={contact.longitude}
             name="longitude"
             onChange={handleChange}
           />
 
-          <Form.Label>Note</Form.Label>
           <Form.Control
             type='text'
-            placeholder=''
+            placeholder='Note'
             value={contact.note}
             name="note"
             onChange={handleChange}

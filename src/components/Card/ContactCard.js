@@ -16,8 +16,6 @@ const ContactCard = ({ item }) => {
           {item.streetAddress}<br />
           {item.phoneNumber}<br />
           {item.emailAddress}<br />
-          {item.note}<br />
-          lat: {item.latitude}, lng: {item.longitude}
         </Card.Text>
       </Card.Body>
     </Card>
