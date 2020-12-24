@@ -38,7 +38,7 @@ function Map (props) {
         >
           <div>
             <h4>
-              {selectedContact.lastName.toUpperCase()} {selectedContact.firstName}
+              {selectedContact.firstName} {selectedContact.lastName}
             </h4>
             <h4 className="organizationNameInfoWindow">
               {selectedContact.organizationName}
