@@ -18,9 +18,9 @@ const ContactUpdate = props => {
   })
   const [updatedContact, setUpdatedContact] = useState(false)
 
-  const { user, msgAlert, match } = props
+  const { msgAlert, match, user } = props
   useEffect(() => {
-    showContact(user, match.params.contactId)
+    showContact(props.user, props.match.params.contactId)
       .then(res => setContact(res.data.contact))
       .then(() => msgAlert({
         heading: 'Contact show success',
@@ -37,17 +37,17 @@ const ContactUpdate = props => {
   const handleChange = event => {
     event.persist()
     console.log('handleChange event is ' + event)
-
-    // setContact(oldContact => {
-    //   let updatedField
-    //   if (event.target.)
-    // })
+    setContact(prevContact => {
+      const updatedField = { [event.target.name]: event.target.value }
+      const editedContact = Object.assign({}, prevContact, updatedField)
+      return editedContact
+    })
   }
 
   const handleSubmit = event => {
     console.log('handleSubmit event is ' + event)
     event.preventDefault()
-    updateContact(user, contact, match.params.contactId)
+    updateContact(props.user, contact, props.match.params.contactId)
       .then(() => setUpdatedContact(true))
       .then(() => msgAlert({
         heading: 'Update succesful',
@@ -59,23 +59,26 @@ const ContactUpdate = props => {
         message: err.message,
         variant: 'danger'
       }))
+      .catch(console.error)
   }
 
   if (updatedContact) {
-    return <Redirect to={`/contacts/${match.params.id}`} />
+    return <Redirect to={`/contacts/${props.match.params.contactId}`} />
   }
-  handleChange()
-  handleSubmit()
-  console.log([updatedContact, setUpdatedContact])
-  console.log(contact)
+  // handleChange()
+  // handleSubmit()
+  // console.log([updatedContact, setUpdatedContact])
+  // console.log(contact)
   return (
-    <ContactForm
-    // contact={contact}
-    // handleChange={handleChange}
-    // handleSubmit={handleSubmit}
-    // match={match}
-    // user={user}
-    />
+    <div>
+      <ContactForm
+        contact={contact}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        match={match}
+        user={user}
+      />
+    </div>
   )
 }
 

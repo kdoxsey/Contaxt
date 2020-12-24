@@ -12,6 +12,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import ContactIndex from './components/Contact/ContactIndex'
 import ContactCreate from './components/Contact/ContactCreate'
 import ContactShow from './components/Contact/ContactShow'
+import ContactUpdate from './components/Contact/ContactUpdate'
 
 class App extends Component {
   constructor () {
@@ -71,6 +72,10 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/contacts' render={() => (
             <ContactIndex msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/contact-update/:contactId' render={({ match, history }) => (
+            <ContactUpdate msgAlert={this.msgAlert} user={user} match={match} history={history} />
           )} />
 
           {/* <AuthenticatedRoute user={user} path='/' component={ContactMap}/> */}
