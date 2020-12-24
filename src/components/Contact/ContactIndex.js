@@ -32,10 +32,10 @@ const ContactIndex = (props) => {
     <Fragment>
       <div>
         <h4>your contacts</h4>
-        {contactIndex}
         <ContactMap
           contacts={contacts}
         />
+        {contactIndex}
       </div>
     </Fragment>
   )

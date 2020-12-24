@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import phoneIcon from './../Card/phone.png'
@@ -37,7 +38,7 @@ function Map (props) {
         >
           <div>
             <h4>
-              {selectedContact.lastName}, {selectedContact.firstName}
+              {selectedContact.lastName.toUpperCase()} {selectedContact.firstName}
             </h4>
             <h4 className="organizationNameInfoWindow">
               {selectedContact.organizationName}

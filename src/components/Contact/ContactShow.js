@@ -3,6 +3,7 @@ import { withRouter, Redirect } from 'react-router-dom'
 import { showContact, deleteContact } from '../../api/contact'
 import Button from 'react-bootstrap/Button'
 import { Card } from 'react-bootstrap'
+// import ContactCreate from './ContactCreate'
 
 const ShowContact = (props) => {
   const [contact, setContact] = useState([])
@@ -56,24 +57,45 @@ const ShowContact = (props) => {
   }
   console.log(contact)
 
-  return (
-    <div>
-      <Fragment>
-        <Card>
-          <Card.Body>
-            {contact.lastName}, {contact.firstName} <br />
-            {contact.streetAddress }<br />
-            {contact.phoneNumber}<br />
-            {contact.emailAddress}<br />
-            {contact.note}<br />
+  if (contact.firstName || contact.lastName) {
+    return (
+      <div>
+        <Fragment>
+          <Card>
+            <Card.Body>
+              {contact.firstName} {contact.lastName} <br />
+              {contact.streetAddress }<br />
+              {contact.phoneNumber}<br />
+              {contact.emailAddress}<br />
+              {contact.note}<br />
             coordinates: {contact.latitude}, {contact.longitude} <br />
-            <Button onClick={handleUpdate}>Update</Button>
-            <Button onClick={handleDelete}>Delete</Button>
-          </Card.Body>
-        </Card>
-      </Fragment>
-    </div>
-  )
+              <Button onClick={handleUpdate}>Update</Button>
+              <Button onClick={handleDelete}>Delete</Button>
+            </Card.Body>
+          </Card>
+        </Fragment>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <Fragment>
+          <Card>
+            <Card.Body>
+              {contact.organizationName} <br />
+              {contact.streetAddress }<br />
+              {contact.phoneNumber}<br />
+              {contact.emailAddress}<br />
+              {contact.note}<br />
+            coordinates: {contact.latitude}, {contact.longitude} <br />
+              <Button onClick={handleUpdate}>Update</Button>
+              <Button onClick={handleDelete}>Delete</Button>
+            </Card.Body>
+          </Card>
+        </Fragment>
+      </div>
+    )
+  }
 }
 
 export default withRouter(ShowContact)
