@@ -13,7 +13,6 @@ const ShowContact = (props) => {
     showContact(user, match.params.contactId)
       .then(res => {
         setContact(res.data.contact)
-        console.log(res.data.contact)
       })
       .then(() => {
         msgAlert({
