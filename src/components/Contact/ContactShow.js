@@ -67,8 +67,8 @@ const ShowContact = (props) => {
                 {contact.streetAddress }<br />
                 {contact.phoneNumber}<br />
                 {contact.emailAddress}<br />
+                coordinates: {contact.latitude}, {contact.longitude} <br />
                 {contact.note}<br />
-            coordinates: {contact.latitude}, {contact.longitude} <br />
                 <Button onClick={handleUpdate}>Update</Button>
                 <Button onClick={handleDelete}>Delete</Button>
               </Card.Body>
@@ -86,8 +86,8 @@ const ShowContact = (props) => {
                 {contact.streetAddress }<br />
                 {contact.phoneNumber}<br />
                 {contact.emailAddress}<br />
+                coordinates: {contact.latitude}, {contact.longitude} <br />
                 {contact.note}<br />
-            coordinates: {contact.latitude}, {contact.longitude} <br />
                 <Button onClick={handleUpdate}>Update</Button>
                 <Button onClick={handleDelete}>Delete</Button>
               </Card.Body>
@@ -106,8 +106,27 @@ const ShowContact = (props) => {
                 {contact.streetAddress }<br />
                 {contact.phoneNumber}<br />
                 {contact.emailAddress}<br />
+                coordinates: {contact.latitude}, {contact.longitude} <br />
                 {contact.note}<br />
-            coordinates: {contact.latitude}, {contact.longitude} <br />
+                <Button onClick={handleUpdate}>Update</Button>
+                <Button onClick={handleDelete}>Delete</Button>
+              </Card.Body>
+            </Card>
+          </Fragment>
+        </div>
+      )
+    } else if (!contact.firstName && contact.lastName && !contact.organizationName) {
+      return (
+        <div>
+          <Fragment>
+            <Card>
+              <Card.Body>
+                {contact.lasttName} <br />
+                {contact.streetAddress }<br />
+                {contact.phoneNumber}<br />
+                {contact.emailAddress}<br />
+                coordinates: {contact.latitude}, {contact.longitude} <br />
+                {contact.note}<br />
                 <Button onClick={handleUpdate}>Update</Button>
                 <Button onClick={handleDelete}>Delete</Button>
               </Card.Body>
@@ -126,8 +145,8 @@ const ShowContact = (props) => {
                 {contact.streetAddress }<br />
                 {contact.phoneNumber}<br />
                 {contact.emailAddress}<br />
+                coordinates: {contact.latitude}, {contact.longitude} <br />
                 {contact.note}<br />
-            coordinates: {contact.latitude}, {contact.longitude} <br />
                 <Button onClick={handleUpdate}>Update</Button>
                 <Button onClick={handleDelete}>Delete</Button>
               </Card.Body>

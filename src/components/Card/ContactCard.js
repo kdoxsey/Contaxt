@@ -11,11 +11,10 @@ const ContactCard = ({ item }) => {
             {item.lastName}, {item.firstName}</Link>
           </ Card.Title>
           <Card.Text>
-            {item.organizationName}
+            {item.organizationName}<br />
             {item.streetAddress}<br />
             {item.phoneNumber}<br />
             {item.emailAddress}<br />
-            {item.note}<br />
           </Card.Text>
         </Card.Body>
       </Card>
@@ -31,7 +30,6 @@ const ContactCard = ({ item }) => {
             {item.streetAddress}<br />
             {item.phoneNumber}<br />
             {item.emailAddress}<br />
-            {item.note}<br />
           </Card.Text>
         </Card.Body>
       </Card>
@@ -47,7 +45,6 @@ const ContactCard = ({ item }) => {
             {item.streetAddress}<br />
             {item.phoneNumber}<br />
             {item.emailAddress}<br />
-            {item.note}<br />
           </Card.Text>
         </Card.Body>
       </Card>
@@ -60,11 +57,10 @@ const ContactCard = ({ item }) => {
             {item.firstName}</Link>
           </ Card.Title>
           <Card.Text>
-            {item.organizationName}
+            {item.organizationName}<br />
             {item.streetAddress}<br />
             {item.phoneNumber}<br />
             {item.emailAddress}<br />
-            {item.note}<br />
           </Card.Text>
         </Card.Body>
       </Card>
@@ -77,11 +73,43 @@ const ContactCard = ({ item }) => {
             {item.lastName}</Link>
           </ Card.Title>
           <Card.Text>
-            {item.organizationName}
+            {item.organizationName} <br />
             {item.streetAddress}<br />
             {item.phoneNumber}<br />
             {item.emailAddress}<br />
-            {item.note}<br />
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    )
+  } else if (item.firstName && !item.lastName && !item.organizationName) {
+    return (
+      <Card>
+        <Card.Body>
+          <Card.Title><Link to ={`/contacts/${item._id}`}>
+            {item.firstName}</Link>
+          </ Card.Title>
+          <Card.Text>
+            {item.organizationName} <br />
+            {item.streetAddress}<br />
+            {item.phoneNumber}<br />
+            {item.emailAddress}<br />
+
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    )
+  } else if (!item.firstName && item.lastName && !item.organizationName) {
+    return (
+      <Card>
+        <Card.Body>
+          <Card.Title><Link to ={`/contacts/${item._id}`}>
+            {item.lastName}</Link>
+          </ Card.Title>
+          <Card.Text>
+            {item.organizationName} <br />
+            {item.streetAddress}<br />
+            {item.phoneNumber}<br />
+            {item.emailAddress}<br />
           </Card.Text>
         </Card.Body>
       </Card>

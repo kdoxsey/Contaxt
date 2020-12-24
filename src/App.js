@@ -65,12 +65,12 @@ class App extends Component {
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/contacts' render={() => (
-            <ContactIndex msgAlert={this.msgAlert} user={user} />
-          )} />
-
           <AuthenticatedRoute user={user} path='/contacts/:contactId' render={({ match }) => (
             <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
+          )} />
+
+          <AuthenticatedRoute user={user} path='/contacts' render={() => (
+            <ContactIndex msgAlert={this.msgAlert} user={user} />
           )} />
 
           {/* <AuthenticatedRoute user={user} path='/' component={ContactMap}/> */}
