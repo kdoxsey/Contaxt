@@ -27,15 +27,14 @@ const ContactIndex = (props) => {
     />
   ))
 
-  console.log(contacts)
   return (
     <Fragment>
-      <ContactMap
-        contacts={contacts}
-      />
       <div className = "contactsContainer">
         {contactIndex}
       </div>
+      <ContactMap
+        contacts={contacts}
+      />
     </Fragment>
   )
 }

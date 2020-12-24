@@ -65,7 +65,6 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-
           <AuthenticatedRoute user={user} path='/contacts/:contactId' render={({ match }) => (
             <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
