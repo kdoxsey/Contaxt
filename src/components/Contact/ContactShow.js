@@ -55,46 +55,87 @@ const ShowContact = (props) => {
   if (update) {
     return <Redirect to={'/contact-update/' + contact._id} />
   }
-  console.log(contact)
-
-  if (contact.firstName || contact.lastName) {
-    return (
-      <div>
-        <Fragment>
-          <Card>
-            <Card.Body>
-              {contact.firstName} {contact.lastName} <br />
-              {contact.streetAddress }<br />
-              {contact.phoneNumber}<br />
-              {contact.emailAddress}<br />
-              {contact.note}<br />
+  if (contact) {
+    if (contact.firstName && contact.lastName) {
+      return (
+        <div>
+          <Fragment>
+            <Card>
+              <Card.Body>
+                {contact.lastName}, {contact.firstName} <br />
+                {contact.organizationName} <br />
+                {contact.streetAddress }<br />
+                {contact.phoneNumber}<br />
+                {contact.emailAddress}<br />
+                {contact.note}<br />
             coordinates: {contact.latitude}, {contact.longitude} <br />
-              <Button onClick={handleUpdate}>Update</Button>
-              <Button onClick={handleDelete}>Delete</Button>
-            </Card.Body>
-          </Card>
-        </Fragment>
-      </div>
-    )
-  } else {
-    return (
-      <div>
-        <Fragment>
-          <Card>
-            <Card.Body>
-              {contact.organizationName} <br />
-              {contact.streetAddress }<br />
-              {contact.phoneNumber}<br />
-              {contact.emailAddress}<br />
-              {contact.note}<br />
+                <Button onClick={handleUpdate}>Update</Button>
+                <Button onClick={handleDelete}>Delete</Button>
+              </Card.Body>
+            </Card>
+          </Fragment>
+        </div>
+      )
+    } else if (!contact.firstName && !contact.lastName && contact.organizationName) {
+      return (
+        <div>
+          <Fragment>
+            <Card>
+              <Card.Body>
+                {contact.organizationName} <br />
+                {contact.streetAddress }<br />
+                {contact.phoneNumber}<br />
+                {contact.emailAddress}<br />
+                {contact.note}<br />
             coordinates: {contact.latitude}, {contact.longitude} <br />
-              <Button onClick={handleUpdate}>Update</Button>
-              <Button onClick={handleDelete}>Delete</Button>
-            </Card.Body>
-          </Card>
-        </Fragment>
-      </div>
-    )
+                <Button onClick={handleUpdate}>Update</Button>
+                <Button onClick={handleDelete}>Delete</Button>
+              </Card.Body>
+            </Card>
+          </Fragment>
+        </div>
+      )
+    } else if (contact.firstName && !contact.lastName && contact.organizationName) {
+      return (
+        <div>
+          <Fragment>
+            <Card>
+              <Card.Body>
+                {contact.firstName} <br />
+                {contact.organizationName} <br />
+                {contact.streetAddress }<br />
+                {contact.phoneNumber}<br />
+                {contact.emailAddress}<br />
+                {contact.note}<br />
+            coordinates: {contact.latitude}, {contact.longitude} <br />
+                <Button onClick={handleUpdate}>Update</Button>
+                <Button onClick={handleDelete}>Delete</Button>
+              </Card.Body>
+            </Card>
+          </Fragment>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <Fragment>
+            <Card>
+              <Card.Body>
+                {contact.lastName} <br />
+                {contact.organizationName} <br />
+                {contact.streetAddress }<br />
+                {contact.phoneNumber}<br />
+                {contact.emailAddress}<br />
+                {contact.note}<br />
+            coordinates: {contact.latitude}, {contact.longitude} <br />
+                <Button onClick={handleUpdate}>Update</Button>
+                <Button onClick={handleDelete}>Delete</Button>
+              </Card.Body>
+            </Card>
+          </Fragment>
+        </div>
+      )
+    }
   }
 }
 
