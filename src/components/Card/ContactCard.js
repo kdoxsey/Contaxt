@@ -11,12 +11,6 @@ const ContactCard = ({ item }) => {
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.firstName} {item.lastName}</Link>
           </ Card.Title>
-          <Card.Text>
-            {item.organizationName} <br />
-            {item.streetAddress}<br />
-            {item.phoneNumber}<br />
-            {item.emailAddress}<br />
-          </Card.Text>
         </Card.Body>
       </Card>
     )
@@ -28,11 +22,6 @@ const ContactCard = ({ item }) => {
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.firstName} {item.lastName}</Link>
           </ Card.Title>
-          <Card.Text>
-            {item.streetAddress}<br />
-            {item.phoneNumber}<br />
-            {item.emailAddress}<br />
-          </Card.Text>
         </Card.Body>
       </Card>
     )
@@ -44,11 +33,6 @@ const ContactCard = ({ item }) => {
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.organizationName}</Link>
           </ Card.Title>
-          <Card.Text>
-            {item.streetAddress}<br />
-            {item.phoneNumber}<br />
-            {item.emailAddress}<br />
-          </Card.Text>
         </Card.Body>
       </Card>
     )
