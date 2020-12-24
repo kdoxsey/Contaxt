@@ -9,3 +9,17 @@
 .organizationNameInfoWindow {
   font-style: italic;
 }
+
+main.container {
+  margin: 0px;
+  padding: 5px;
+}
+
+.card {
+  width: fit-content;
+}
+
+.contactsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 const ContactCard = ({ item }) => {
   if (item.firstName && item.lastName && item.organizationName) {
     return (
-      <Card>
+      <Card
+        className="contactCard">
         <Card.Body>
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.lastName}, {item.firstName}</Link>
@@ -21,7 +22,8 @@ const ContactCard = ({ item }) => {
     )
   } else if (item.firstName && item.lastName && !item.organizationName) {
     return (
-      <Card>
+      <Card
+        className="contactCard">
         <Card.Body>
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.lastName}, {item.firstName}</Link>
@@ -36,7 +38,8 @@ const ContactCard = ({ item }) => {
     )
   } else if (!item.firstName && !item.lastName && item.organizationName) {
     return (
-      <Card>
+      <Card
+        className="contactCard">
         <Card.Body>
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.organizationName}</Link>
@@ -51,7 +54,8 @@ const ContactCard = ({ item }) => {
     )
   } else if (item.firstName && !item.lastName && item.organizationName) {
     return (
-      <Card>
+      <Card
+        className="contactCard">
         <Card.Body>
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.firstName}</Link>
@@ -67,7 +71,8 @@ const ContactCard = ({ item }) => {
     )
   } else if (!item.firstName && item.lastName && item.organizationName) {
     return (
-      <Card>
+      <Card
+        className="contactCard">
         <Card.Body>
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.lastName}</Link>
@@ -83,7 +88,8 @@ const ContactCard = ({ item }) => {
     )
   } else if (item.firstName && !item.lastName && !item.organizationName) {
     return (
-      <Card>
+      <Card
+        className="contactCard">
         <Card.Body>
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.firstName}</Link>
@@ -100,7 +106,8 @@ const ContactCard = ({ item }) => {
     )
   } else if (!item.firstName && item.lastName && !item.organizationName) {
     return (
-      <Card>
+      <Card
+        className="contactCard">
         <Card.Body>
           <Card.Title><Link to ={`/contacts/${item._id}`}>
             {item.lastName}</Link>

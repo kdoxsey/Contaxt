@@ -30,11 +30,10 @@ const ContactIndex = (props) => {
   console.log(contacts)
   return (
     <Fragment>
-      <div>
-        <h4>your contacts</h4>
-        <ContactMap
-          contacts={contacts}
-        />
+      <ContactMap
+        contacts={contacts}
+      />
+      <div className = "contactsContainer">
         {contactIndex}
       </div>
     </Fragment>
