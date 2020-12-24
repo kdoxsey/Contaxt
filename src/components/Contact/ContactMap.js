@@ -36,9 +36,12 @@ function Map (props) {
           }}
         >
           <div>
-            <h3>
+            <h4>
               {selectedContact.lastName}, {selectedContact.firstName}
-            </h3>
+            </h4>
+            <h4 className="organizationNameInfoWindow">
+              {selectedContact.organizationName}
+            </h4>
             <img src={phoneIcon} alt='phone icon' className='contactIcon' />
             <a href ={'tel:' + selectedContact.phoneNumber}>{selectedContact.phoneNumber}</a> <br />
 
