@@ -10,15 +10,19 @@
   font-style: italic;
 }
 
-main.container {
-  margin: 0px;
-  padding: 5px;
-}
-
-.card {
-  width: fit-content;
+main {
+  display: flex;
+  flex-direction: row;
 }
 
 .contactsContainer {
   display: flex;
+  flex-direction: column;
+  margin: 0px;
+  width: 250px;
+}
+
+.mapView {
+  display: flex;
+  flex-direction: row;
 }

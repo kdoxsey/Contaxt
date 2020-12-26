@@ -28,7 +28,8 @@ const ContactIndex = (props) => {
   ))
 
   return (
-    <Fragment>
+    <Fragment
+      className="mapView">
       <div className = "contactsContainer">
         {contactIndex}
       </div>
