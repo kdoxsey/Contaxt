@@ -8,7 +8,6 @@ const authenticatedOptions = (
     <Nav.Link href="#create-contact">+</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
-    <Nav.Link href="home">Contaxt</Nav.Link>
   </Fragment>
 )
 
@@ -26,6 +25,11 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <Navbar style={{ fontSize: '25px' }}>
+    <Navbar.Brand
+      href="#/"
+      className="brand">
+      Contaxt
+    </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
