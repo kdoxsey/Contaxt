@@ -13,6 +13,7 @@ import ContactIndex from './components/Contact/ContactIndex'
 import ContactCreate from './components/Contact/ContactCreate'
 import ContactShow from './components/Contact/ContactShow'
 import ContactUpdate from './components/Contact/ContactUpdate'
+import Landing from './components/Landing/Landing'
 
 class App extends Component {
   constructor () {
@@ -65,6 +66,8 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+
+          <Route exact path='/' component={Landing} />
           <AuthenticatedRoute user={user} path='/contacts/:contactId' render={({ match }) => (
             <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
