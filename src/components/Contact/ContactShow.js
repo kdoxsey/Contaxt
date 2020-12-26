@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import { Card } from 'react-bootstrap'
 // import ContactCreate from './ContactCreate'
 
-const ShowContact = (props) => {
+const ContactShow = (props) => {
   const [contact, setContact] = useState([])
   const [update, setUpdate] = useState(false)
   const { user, msgAlert, match, history } = props
@@ -13,6 +13,11 @@ const ShowContact = (props) => {
     showContact(user, match.params.contactId)
       .then(res => {
         setContact(res.data.contact)
+        // console.log(res.data)
+        // console.log(res.params)
+        // console.log(user)
+        // console.log(res.data.contact)
+        // console.log(props)
       })
       .then(() => {
         msgAlert({
@@ -56,106 +61,27 @@ const ShowContact = (props) => {
     return <Redirect to={'/contact-update/' + contact._id} />
   }
   if (contact) {
-    if (contact.firstName && contact.lastName) {
-      return (
-        <div>
-          <Fragment>
-            <Card>
-              <Card.Body>
-                {contact.lastName}, {contact.firstName} <br />
-                {contact.organizationName} <br />
-                {contact.streetAddress }<br />
-                {contact.phoneNumber}<br />
-                {contact.emailAddress}<br />
+    return (
+      <div>
+        <Fragment>
+          <Card>
+            <Card.Body>
+              {contact.firstName} {contact.lastName} <br />
+              {contact.organizationName} <br />
+              {contact.streetAddress }<br />
+              {contact.phoneNumber}<br />
+              {contact.emailAddress}<br />
                 coordinates: {contact.latitude}, {contact.longitude} <br />
-                {contact.note}<br />
-                <Button onClick={handleUpdate}>Update</Button>
-                <Button onClick={handleDelete}>Delete</Button>
-              </Card.Body>
-            </Card>
-          </Fragment>
-        </div>
-      )
-    } else if (!contact.firstName && !contact.lastName && contact.organizationName) {
-      return (
-        <div>
-          <Fragment>
-            <Card>
-              <Card.Body>
-                {contact.organizationName} <br />
-                {contact.streetAddress }<br />
-                {contact.phoneNumber}<br />
-                {contact.emailAddress}<br />
-                coordinates: {contact.latitude}, {contact.longitude} <br />
-                {contact.note}<br />
-                <Button onClick={handleUpdate}>Update</Button>
-                <Button onClick={handleDelete}>Delete</Button>
-              </Card.Body>
-            </Card>
-          </Fragment>
-        </div>
-      )
-    } else if (contact.firstName && !contact.lastName && contact.organizationName) {
-      return (
-        <div>
-          <Fragment>
-            <Card>
-              <Card.Body>
-                {contact.firstName} <br />
-                {contact.organizationName} <br />
-                {contact.streetAddress }<br />
-                {contact.phoneNumber}<br />
-                {contact.emailAddress}<br />
-                coordinates: {contact.latitude}, {contact.longitude} <br />
-                {contact.note}<br />
-                <Button onClick={handleUpdate}>Update</Button>
-                <Button onClick={handleDelete}>Delete</Button>
-              </Card.Body>
-            </Card>
-          </Fragment>
-        </div>
-      )
-    } else if (!contact.firstName && contact.lastName && !contact.organizationName) {
-      return (
-        <div>
-          <Fragment>
-            <Card>
-              <Card.Body>
-                {contact.lasttName} <br />
-                {contact.streetAddress }<br />
-                {contact.phoneNumber}<br />
-                {contact.emailAddress}<br />
-                coordinates: {contact.latitude}, {contact.longitude} <br />
-                {contact.note}<br />
-                <Button onClick={handleUpdate}>Update</Button>
-                <Button onClick={handleDelete}>Delete</Button>
-              </Card.Body>
-            </Card>
-          </Fragment>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <Fragment>
-            <Card>
-              <Card.Body>
-                {contact.lastName} <br />
-                {contact.organizationName} <br />
-                {contact.streetAddress }<br />
-                {contact.phoneNumber}<br />
-                {contact.emailAddress}<br />
-                coordinates: {contact.latitude}, {contact.longitude} <br />
-                {contact.note}<br />
-                <Button onClick={handleUpdate}>Update</Button>
-                <Button onClick={handleDelete}>Delete</Button>
-              </Card.Body>
-            </Card>
-          </Fragment>
-        </div>
-      )
-    }
+              {contact.note}<br />
+              <Button onClick={handleUpdate}>Update</Button>
+              <Button onClick={handleDelete}>Delete</Button>
+            </Card.Body>
+          </Card>
+        </Fragment>
+      </div>
+    )
   }
+  setContact([match.params.contactId])
 }
 
-export default withRouter(ShowContact)
+export default withRouter(ContactShow)
