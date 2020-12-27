@@ -10,20 +10,20 @@
   font-style: italic;
 }
 
-main {
-  display: flex;
-  flex-direction: row;
-  background-image: url("/Users/kevindoxsey/sei/projects/project-4/places/src/components/Home/20191222_070.png");
-}
+// main {
+//   display: flex;
+//   flex-direction: row;
+//   background-image: url("/Users/kevindoxsey/sei/projects/project-4/places/src/components/Home/20191222_070.png");
+// }
 
-.contactsContainer {
+.contactsIndex {
   display: flex;
   flex-direction: column;
   margin: 0px;
   width: 250px;
 }
 
-.mapView {
+.contactMap {
   display: flex;
   flex-direction: row;
 }

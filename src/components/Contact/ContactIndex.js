@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import ContactCard from './../Card/ContactCard'
 import ContactMap from './../Contact/ContactMap'
 
@@ -28,15 +28,16 @@ const ContactIndex = (props) => {
   ))
 
   return (
-    <Fragment
-      className="mapView">
-      <div className = "contactsContainer">
+    <div
+      className="contactMap"
+    >
+      <div className = "contactsIndex">
         {contactIndex}
       </div>
       <ContactMap
         contacts={contacts}
       />
-    </Fragment>
+    </div>
   )
 }
 
