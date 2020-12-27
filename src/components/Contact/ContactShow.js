@@ -13,11 +13,11 @@ const ContactShow = (props) => {
     showContact(user, match.params.contactId)
       .then(res => {
         setContact(res.data.contact)
-        console.log(res.data)
-        console.log(res.params)
-        console.log(user)
-        console.log(res.data.contact)
-        console.log(props)
+        // console.log(res.data)
+        // console.log(res.params)
+        // console.log(user)
+        // console.log(res.data.contact)
+        // console.log(props)
       })
       .then(() => {
         msgAlert({
@@ -60,7 +60,6 @@ const ContactShow = (props) => {
   if (update) {
     return <Redirect to={'/contact-update/' + contact._id} />
   }
-
   if (contact) {
     return (
       <div>
@@ -82,6 +81,7 @@ const ContactShow = (props) => {
       </div>
     )
   }
+  setContact([match.params.contactId])
 }
 
 export default withRouter(ContactShow)
