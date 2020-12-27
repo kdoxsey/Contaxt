@@ -8,6 +8,7 @@ const ContactIndex = (props) => {
   const [contacts, setContacts] = useState(null)
   const { user, msgAlert } = props
   useEffect(() => {
+    console.log('contacts is ' + contacts)
     indexContacts(user)
       .then(res => setContacts(res.data.contacts))
       .catch(() => msgAlert({

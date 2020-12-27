@@ -13,11 +13,11 @@ const ContactShow = (props) => {
     showContact(user, match.params.contactId)
       .then(res => {
         setContact(res.data.contact)
-        // console.log(res.data)
-        // console.log(res.params)
-        // console.log(user)
-        // console.log(res.data.contact)
-        // console.log(props)
+        console.log(res.data)
+        console.log(res.params)
+        console.log(user)
+        console.log(res.data.contact)
+        console.log(props)
       })
       .then(() => {
         msgAlert({
