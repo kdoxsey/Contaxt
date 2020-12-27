@@ -33,6 +33,8 @@ const ContactShow = (props) => {
           variant: 'danger'
         })
       })
+  }, [])
+
   const handleDelete = () => {
     deleteContact(user, match.params.contactId)
       .then(() => {
@@ -55,9 +57,6 @@ const ContactShow = (props) => {
     setUpdate(true)
   }
 
-  const handleChange = () => {
-  }
-
   if (update) {
     return <Redirect to={'/contact-update/' + contact._id} />
   }
@@ -77,7 +76,6 @@ const ContactShow = (props) => {
               {contact.note}<br />
               <Button onClick={handleUpdate}>Update</Button>
               <Button onClick={handleDelete}>Delete</Button>
-              <Button onClick={handleChange}>Change</Button>
             </Card.Body>
           </Card>
         </Fragment>
