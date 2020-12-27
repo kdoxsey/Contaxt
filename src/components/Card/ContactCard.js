@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const ContactCard = ({ item }) => {
-  if ((item.firstName || item.lastName) && (item.organizationName)) {
+  if (item.firstName || item.lastName) {
     return (
       <Card
         className="contactCard">

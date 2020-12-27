@@ -1,5 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
 .contactIcon {
   width: 15px;
   margin-right: 10px;
@@ -7,6 +12,7 @@
 }
 
 .organizationNameInfoWindow {
+  font-size: 17px;
   font-style: italic;
 }
 
