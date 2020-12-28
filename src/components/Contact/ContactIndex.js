@@ -20,6 +20,7 @@ const ContactIndex = (props) => {
   if (!contacts) {
     return <p>Loading...</p>
   }
+  console.log(props)
 
   const contactIndex = contacts.map(contact => (
     <ContactCard

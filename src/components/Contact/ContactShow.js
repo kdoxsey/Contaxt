@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
-import { showContact, deleteContact } from '../../api/contact'
+import { showContact, deleteContact, indexContacts } from '../../api/contact'
 import Button from 'react-bootstrap/Button'
 import { Card } from 'react-bootstrap'
 // import ContactCreate from './ContactCreate'
@@ -8,6 +8,7 @@ import { Card } from 'react-bootstrap'
 const ContactShow = (props) => {
   const [contact, setContact] = useState([])
   const [update, setUpdate] = useState(false)
+  const [close, setClose] = useState(false)
   const { user, msgAlert, match, history } = props
   useEffect(() => {
     showContact(user, match.params.contactId)
@@ -50,6 +51,9 @@ const ContactShow = (props) => {
         })
       })
       .then(() => history.push('/contacts'))
+      .then(() => indexContacts(user))
+      .then(console.log(user))
+      .then(console.log(match))
       .catch(err => {
         msgAlert({
           heading: 'Deletion failed',
@@ -60,6 +64,13 @@ const ContactShow = (props) => {
   }
   const handleUpdate = () => {
     setUpdate(true)
+  }
+  const handleClose = () => {
+    setClose(true)
+  }
+
+  if (close) {
+    return <Redirect to={'/contacts/'} />
   }
 
   if (update) {
@@ -75,10 +86,10 @@ const ContactShow = (props) => {
             {contact.streetAddress }<br />
             {contact.phoneNumber}<br />
             {contact.emailAddress}<br />
-                coordinates: {contact.latitude}, {contact.longitude} <br />
             {contact.note}<br />
             <Button onClick={handleUpdate}>Update</Button>
             <Button onClick={handleDelete}>Delete</Button>
+            <Button onClick={handleClose}>x</Button>
           </Card.Body>
         </Card>
       </Fragment>

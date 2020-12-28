@@ -97,7 +97,7 @@ export default [
     'elementType': 'geometry',
     'stylers': [
       {
-        'color': '#e8e8e8'
+        'color': '#faf8eb'
       }
     ]
   },
@@ -184,7 +184,7 @@ export default [
     'elementType': 'geometry',
     'stylers': [
       {
-        'color': '#508dad'
+        'color': '#62b3d9'
       }
     ]
   },
