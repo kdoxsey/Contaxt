@@ -53,7 +53,6 @@ class SignIn extends Component {
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
               <Form.Control
                 required
                 type="email"
@@ -64,7 +63,6 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
               <Form.Control
                 required
                 name="password"
@@ -78,7 +76,7 @@ class SignIn extends Component {
               variant="primary"
               type="submit"
             >
-              Submit
+              Sign In
             </Button>
           </Form>
         </div>

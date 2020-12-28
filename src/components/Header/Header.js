@@ -3,7 +3,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
-  <Fragment>
+  <Fragment
+    className="navbar_links">
     <Nav.Link href="#contacts">Contacts</Nav.Link>
     <Nav.Link href="#create-contact">+</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
@@ -12,9 +13,12 @@ const authenticatedOptions = (
 )
 
 const unauthenticatedOptions = (
-  <Fragment>
-    <Nav.Link href="#sign-up">Sign Up</Nav.Link>
-    <Nav.Link href="#sign-in">Sign In</Nav.Link>
+  <Fragment
+    className="navbar_links">
+    <Nav.Link
+      className="navbar_links" href="#sign-up">Sign Up</Nav.Link>
+    <Nav.Link
+      className="navbar_links" href="#sign-in">Sign In</Nav.Link>
   </Fragment>
 )
 
@@ -27,7 +31,7 @@ const Header = ({ user }) => (
   <Navbar style={{ fontSize: '25px' }}>
     <Navbar.Brand
       href="#/"
-      className="brand">
+      className="navbar_links">
       Contaxt
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />

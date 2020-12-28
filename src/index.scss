@@ -1,9 +1,23 @@
 @import "~bootstrap/scss/bootstrap";
 
-:root {
-  height: 100vh;
-  width: 100vw;
+// .navbar_links {
+//   background-color: #f9ddc5;
+//   margin: 10px;
+// }
+
+.about {
+  // background-color: #f9ddc5;
+  // width: fit-content;
+  margin-left: 50px;
 }
+
+// .contactIndex {
+//   background-color: #f9ddc5;
+// }
+
+// .navbar {
+//   background-color: #f9ddc5;
+// }
 
 .contactIcon {
   width: 15px;
@@ -16,7 +30,7 @@
   font-style: italic;
 }
 
-.contactsIndex {
+.contactIndex {
   display: flex;
   flex-direction: column;
   margin: 0px;
@@ -26,12 +40,43 @@
 
 }
 
-.contactMap {
+.mapIndexComponent {
   display: flex;
   flex-direction: row;
+}
+
+.contactCard {
+  margin: 5px;
 }
 
 .about {
   display: flex;
   flex-direction: column;
+}
+
+// input[type="text"], textarea {
+//   background-color : #f9ddc5;
+// }
+//
+// input[type="email"], textarea {
+//   background-color : #f9ddc5;
+// }
+//
+// input[type="password"], textarea {
+//   background-color : #f9ddc5;
+// }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+// body {
+//   height: 100vh;
+//   justify-content: space-between;
+// }
+
+.col-sm-10 col-md-8 mx-auto mt-5 {
+  align-items: center;
 }

@@ -30,12 +30,13 @@ const ContactIndex = (props) => {
 
   return (
     <div
-      className="contactMap"
+      className="mapIndexComponent"
     >
-      <div className = "contactsIndex">
+      <div className = "contactIndex">
         {contactIndex}
       </div>
       <ContactMap
+        className="contactMap"
         contacts={contacts}
       />
     </div>

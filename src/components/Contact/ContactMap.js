@@ -4,6 +4,7 @@ import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'reac
 import phoneIcon from './../Card/phone.png'
 import emailIcon from './../Card/email.png'
 import houseIcon from './../Card/house.png'
+import mapStyles from './../../mapStyles'
 
 function Map (props) {
   const [selectedContact, setSelectedContact] = useState(null)
@@ -12,6 +13,7 @@ function Map (props) {
     <GoogleMap
       defaultZoom={4}
       defaultCenter={{ lat: 37.0902, lng: -95.7129 }}
+      defaultOptions={{ styles: mapStyles }}
     >
       {props.contacts.map(contact => (
         <Marker

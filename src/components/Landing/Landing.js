@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 const Landing = () => (
   <Fragment
     className="about">
-    <p>your contacts in context
+    <p className="about">your contacts in context
     </p>
   </Fragment>
 )
