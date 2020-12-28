@@ -64,7 +64,7 @@ export default [
     'elementType': 'all',
     'stylers': [
       {
-        'visibility': 'off'
+        'visibility': 'simplified'
       }
     ]
   },
@@ -154,7 +154,7 @@ export default [
     'elementType': 'labels.icon',
     'stylers': [
       {
-        'visibility': 'off'
+        'visibility': 'on'
       }
     ]
   },
