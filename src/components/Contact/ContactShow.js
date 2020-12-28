@@ -19,13 +19,13 @@ const ContactShow = (props) => {
         // console.log(res.data.contact)
         // console.log(props)
       })
-      .then(() => {
-        msgAlert({
-          heading: 'Show contact Success',
-          message: 'See the contact',
-          variant: 'success'
-        })
-      })
+      // .then(() => {
+      //   msgAlert({
+      //     heading: 'Show contact Success',
+      //     message: 'See the contact',
+      //     variant: 'success'
+      //   })
+      // })
       .catch(err => {
         msgAlert({
           heading: 'Show Contact Failed',
