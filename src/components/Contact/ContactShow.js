@@ -33,7 +33,12 @@ const ContactShow = (props) => {
           variant: 'danger'
         })
       })
-  }, [])
+  }, [match.params.contactId])
+
+  // const changeContact = () => {
+  //   if (contact) {
+  //     showContact(user, match.params.contactId)
+  //   }
 
   const handleDelete = () => {
     deleteContact(user, match.params.contactId)
@@ -53,40 +58,6 @@ const ContactShow = (props) => {
         })
       })
   }
-
-  function showNewCard () {
-    showContact(user, match.params.contactId)
-      .then(res => {
-        setContact(res.data.contact)
-      })
-      .catch(err => {
-        msgAlert({
-          heading: 'Show Contat Failed',
-          message: 'Error code: ' + err.message,
-          variant: 'danger'
-        })
-      })
-    console.log(contact)
-  }
-
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
-  return (
-    <div>
-      {contact ? (
-        <div>
-          <ContactCard
-            id={contact._id}
-            firstName={contact.firstName}
-            lastName={contact.lastName}
-            organizationName={contact.organizationName}
-            emailAddress={contact.emailAddress}
-            phoneNumber={contact.phoneNumber}
-            streetAddress={contact.streetAddress}
-            note={contact.note}
-          />
-
-
   const handleUpdate = () => {
     setUpdate(true)
   }
@@ -94,28 +65,25 @@ const ContactShow = (props) => {
   if (update) {
     return <Redirect to={'/contact-update/' + contact._id} />
   }
-  if (contact) {
-    return (
-      <div>
-        <Fragment>
-          <Card>
-            <Card.Body>
-              {contact.firstName} {contact.lastName} <br />
-              {contact.organizationName} <br />
-              {contact.streetAddress }<br />
-              {contact.phoneNumber}<br />
-              {contact.emailAddress}<br />
+  return (
+    <div>
+      <Fragment>
+        <Card>
+          <Card.Body>
+            {contact.firstName} {contact.lastName} <br />
+            {contact.organizationName} <br />
+            {contact.streetAddress }<br />
+            {contact.phoneNumber}<br />
+            {contact.emailAddress}<br />
                 coordinates: {contact.latitude}, {contact.longitude} <br />
-              {contact.note}<br />
-              <Button onClick={handleUpdate}>Update</Button>
-              <Button onClick={handleDelete}>Delete</Button>
-            </Card.Body>
-          </Card>
-        </Fragment>
-      </div>
-    )
-  }
-  setContact([match.params.contactId])
+            {contact.note}<br />
+            <Button onClick={handleUpdate}>Update</Button>
+            <Button onClick={handleDelete}>Delete</Button>
+          </Card.Body>
+        </Card>
+      </Fragment>
+    </div>
+  )
 }
 
 export default withRouter(ContactShow)
