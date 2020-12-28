@@ -17,18 +17,9 @@ export default [
       }
     ]
   },
-  {
-    'featureType': 'administrative.country',
-    'elementType': 'all',
-    'stylers': [
-      {
-        'visibility': 'simplified'
-      }
-    ]
-  },
   // {
   //   'featureType': 'administrative.country',
-  //   'elementType': 'geometry',
+  //   'elementType': 'all',
   //   'stylers': [
   //     {
   //       'visibility': 'simplified'
@@ -36,8 +27,17 @@ export default [
   //   ]
   // },
   {
+    'featureType': 'administrative.country',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'visibility': 'simplified'
+      }
+    ]
+  },
+  {
     'featureType': 'administrative.province',
-    'elementType': 'all',
+    'elementType': 'geometry',
     'stylers': [
       {
         'visibility': 'simplified'
