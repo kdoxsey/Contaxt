@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
 import phoneIcon from './../Card/phone.png'
