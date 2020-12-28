@@ -4,10 +4,7 @@ export default [
     'elementType': 'labels',
     'stylers': [
       {
-        'visibility': 'off'
-      },
-      {
-        'color': '#3d3829'
+        'visibility': 'simplified'
       }
     ]
   },
@@ -16,7 +13,67 @@ export default [
     'elementType': 'labels.text',
     'stylers': [
       {
+        'color': '#444444'
+      }
+    ]
+  },
+  {
+    'featureType': 'administrative.country',
+    'elementType': 'all',
+    'stylers': [
+      {
         'visibility': 'simplified'
+      }
+    ]
+  },
+  // {
+  //   'featureType': 'administrative.country',
+  //   'elementType': 'geometry',
+  //   'stylers': [
+  //     {
+  //       'visibility': 'simplified'
+  //     }
+  //   ]
+  // },
+  {
+    'featureType': 'administrative.province',
+    'elementType': 'all',
+    'stylers': [
+      {
+        'visibility': 'simplified'
+      }
+    ]
+  },
+  {
+    'featureType': 'administrative.locality',
+    'elementType': 'all',
+    'stylers': [
+      {
+        'visibility': 'simplified'
+      },
+      {
+        'saturation': '-100'
+      },
+      {
+        'lightness': '30'
+      }
+    ]
+  },
+  {
+    'featureType': 'administrative.neighborhood',
+    'elementType': 'all',
+    'stylers': [
+      {
+        'visibility': 'off'
+      }
+    ]
+  },
+  {
+    'featureType': 'administrative.land_parcel',
+    'elementType': 'all',
+    'stylers': [
+      {
+        'visibility': 'off'
       }
     ]
   },
@@ -25,175 +82,118 @@ export default [
     'elementType': 'all',
     'stylers': [
       {
-        'color': '#f9ddc5'
+        'visibility': 'simplified'
       },
       {
-        'lightness': -7
+        'gamma': '0.00'
+      },
+      {
+        'lightness': '74'
       }
     ]
   },
   {
-    'featureType': 'poi.business',
+    'featureType': 'landscape',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#ffffff'
+      }
+    ]
+  },
+  {
+    'featureType': 'poi',
     'elementType': 'all',
     'stylers': [
-      {
-        'color': '#645c20'
-      },
-      {
-        'lightness': 38
-      }
-    ]
-  },
-  {
-    'featureType': 'poi.government',
-    'elementType': 'all',
-    'stylers': [
-      {
-        'color': '#9e5916'
-      },
-      {
-        'lightness': 46
-      }
-    ]
-  },
-  {
-    'featureType': 'poi.medical',
-    'elementType': 'geometry.fill',
-    'stylers': [
-      {
-        'color': '#813033'
-      },
-      {
-        'lightness': 38
-      },
       {
         'visibility': 'off'
       }
     ]
   },
   {
-    'featureType': 'poi.park',
-    'elementType': 'all',
+    'featureType': 'road',
+    'elementType': 'geometry',
     'stylers': [
       {
-        'color': '#076614'
+        'visibility': 'simplified'
       },
       {
-        'lightness': 39
+        'color': '#edb7b7'
+      },
+      {
+        'saturation': '-15'
+      },
+      {
+        'lightness': '40'
+      },
+      {
+        'gamma': '1.25'
       }
     ]
   },
-  {
-    'featureType': 'poi.school',
-    'elementType': 'all',
-    'stylers': [
-      {
-        'color': '#a95521'
-      },
-      {
-        'lightness': 35
-      }
-    ]
-  },
-  // {
-  //   'featureType': 'poi.sports_complex',
-  //   'elementType': 'all',
-  //   'stylers': [
-  //     {
-  //       'color': '#9e5916'
-  //     },
-  //     {
-  //       'lightness': 32
-  //     }
-  //   ]
-  // },
   {
     'featureType': 'road',
-    'elementType': 'all',
+    'elementType': 'labels',
     'stylers': [
       {
-        'color': '#813033'
-      },
-      {
-        'lightness': 43
-      }
-    ]
-  },
-  {
-    'featureType': 'road.local',
-    'elementType': 'geometry.fill',
-    'stylers': [
-      {
-        'color': '#f19f53'
-      },
-      {
-        'weight': 1.3
-      },
-      {
-        'visibility': 'on'
-      },
-      {
-        'lightness': 16
-      }
-    ]
-  },
-  {
-    'featureType': 'road.local',
-    'elementType': 'geometry.stroke',
-    'stylers': [
-      {
-        'color': '#f19f53'
-      },
-      {
-        'lightness': -10
+        'visibility': 'off'
       }
     ]
   },
   {
     'featureType': 'transit',
-    'elementType': 'all',
+    'elementType': 'labels',
     'stylers': [
       {
-        'lightness': 38
+        'visibility': 'simplified'
+      }
+    ]
+  },
+  {
+    'featureType': 'transit',
+    'elementType': 'labels.icon',
+    'stylers': [
+      {
+        'visibility': 'off'
       }
     ]
   },
   {
     'featureType': 'transit.line',
-    'elementType': 'all',
+    'elementType': 'geometry',
     'stylers': [
       {
-        'color': '#813033'
+        'color': '#ff0000'
       },
       {
-        'lightness': 22
+        'lightness': '80'
       }
     ]
   },
-  // {
-  //   'featureType': 'transit.station',
-  //   'elementType': 'all',
-  //   'stylers': [
-  //     {
-  //       'visibility': 'off'
-  //     }
-  //   ]
-  // },
   {
-    'featureType': 'water',
-    'elementType': 'all',
+    'featureType': 'transit.station',
+    'elementType': 'geometry',
     'stylers': [
       {
-        'color': '#1994bf'
-      },
+        'color': '#e5e5e5'
+      }
+    ]
+  },
+  {
+    'featureType': 'water',
+    'elementType': 'geometry',
+    'stylers': [
       {
-        'saturation': -69
-      },
+        'color': '#508dad'
+      }
+    ]
+  },
+  {
+    'featureType': 'water',
+    'elementType': 'labels',
+    'stylers': [
       {
-        'gamma': 0.99
-      },
-      {
-        'lightness': 43
+        'visibility': 'off'
       }
     ]
   }
