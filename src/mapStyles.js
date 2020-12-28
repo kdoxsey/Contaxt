@@ -97,16 +97,16 @@ export default [
     'elementType': 'geometry',
     'stylers': [
       {
-        'color': '#ffffff'
+        'color': '#e8e8e8'
       }
     ]
   },
   {
-    'featureType': 'poi',
-    'elementType': 'all',
+    'featureType': 'poi.park',
+    'elementType': 'geometry',
     'stylers': [
       {
-        'visibility': 'off'
+        'color': '#abc7ad'
       }
     ]
   },
@@ -118,7 +118,7 @@ export default [
         'visibility': 'simplified'
       },
       {
-        'color': '#edb7b7'
+        'color': '#b36d64'
       },
       {
         'saturation': '-15'
@@ -136,7 +136,7 @@ export default [
     'elementType': 'labels',
     'stylers': [
       {
-        'visibility': 'off'
+        'visibility': 'simplified'
       }
     ]
   },
