@@ -31,7 +31,7 @@ export default [
     'elementType': 'geometry',
     'stylers': [
       {
-        'visibility': 'simplified'
+        'visibility': 'on'
       }
     ]
   },
