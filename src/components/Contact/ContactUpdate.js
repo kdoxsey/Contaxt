@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ContactForm from '../Contact/ContactForm'
 import { Redirect } from 'react-router-dom'
-// import ContactIndex from './ContactIndex'
 
 import { updateContact, showContact } from '../../api/contact'
 
