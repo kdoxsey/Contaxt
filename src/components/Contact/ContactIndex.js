@@ -33,7 +33,7 @@ const ContactIndex = (props) => {
     <div
       className="mapIndexComponent"
     >
-      <div className = "contactIndex">
+      <div className = "contactIndex" user ={user} token={user.token}>
         {contactIndex}
       </div>
       <ContactMap
