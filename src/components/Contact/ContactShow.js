@@ -35,9 +35,8 @@ const ContactShow = (props) => {
           variant: 'success'
         })
       })
-      .then(console.log(match.params.contactId))
-      .then(() => history.push('/contacts'))
       .then(setDeleted(true))
+      .then(() => history.push('/contacts'))
       .then(console.log(contact))
       .catch(err => {
         msgAlert({
