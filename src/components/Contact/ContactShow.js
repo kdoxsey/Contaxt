@@ -3,7 +3,6 @@ import { withRouter, Redirect } from 'react-router-dom'
 import { showContact, deleteContact } from '../../api/contact'
 import Button from 'react-bootstrap/Button'
 import { Card } from 'react-bootstrap'
-import ContactIndex from './ContactIndex'
 // import ContactCreate from './ContactCreate'
 
 const ContactShow = (props) => {
@@ -81,9 +80,6 @@ const ContactShow = (props) => {
           </Card.Body>
         </Card>
       </Fragment>
-      <ContactIndex
-        user={props.user}
-        token={props.token}/>
     </div>
   )
 }
