@@ -36,6 +36,17 @@ const ContactCard = ({ item }) => {
         </Card.Body>
       </Card>
     )
+  } else {
+    return (
+      <Card
+        className="contactCard">
+        <Card.Body>
+          <Card.Title><Link to ={`/contacts/${item._id}`}>
+            {item._id}</Link>
+          </ Card.Title>
+        </Card.Body>
+      </Card>
+    )
   }
 }
 
