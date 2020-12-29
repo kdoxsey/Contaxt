@@ -24,10 +24,10 @@ function Map (props) {
           onClick={() => {
             setSelectedContact(contact)
           }}
-          icon={{
-            url: '/contaxt_marker.png',
-            scaledSize: new window.google.maps.Size(30, 40)
-          }}
+          // icon={{
+          //   url: '/contaxt_marker.png',
+          //   scaledSize: new window.google.maps.Size(30, 40)
+          // }}
         />
       ))}
 
