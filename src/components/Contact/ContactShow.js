@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
-import { showContact, deleteContact, indexContacts } from '../../api/contact'
+import { showContact, deleteContact } from '../../api/contact'
 import Button from 'react-bootstrap/Button'
 import { Card } from 'react-bootstrap'
 // import ContactCreate from './ContactCreate'
@@ -9,24 +9,13 @@ const ContactShow = (props) => {
   const [contact, setContact] = useState([])
   const [update, setUpdate] = useState(false)
   const [close, setClose] = useState(false)
+  const [deleted, setDeleted] = useState(false)
   const { user, msgAlert, match, history } = props
   useEffect(() => {
     showContact(user, match.params.contactId)
       .then(res => {
         setContact(res.data.contact)
-        // console.log(res.data)
-        // console.log(res.params)
-        // console.log(user)
-        // console.log(res.data.contact)
-        // console.log(props)
       })
-      // .then(() => {
-      //   msgAlert({
-      //     heading: 'Show contact Success',
-      //     message: 'See the contact',
-      //     variant: 'success'
-      //   })
-      // })
       .catch(err => {
         msgAlert({
           heading: 'Show Contact Failed',
@@ -35,11 +24,6 @@ const ContactShow = (props) => {
         })
       })
   }, [match.params.contactId])
-
-  // const changeContact = () => {
-  //   if (contact) {
-  //     showContact(user, match.params.contactId)
-  //   }
 
   const handleDelete = () => {
     deleteContact(user, match.params.contactId)
@@ -50,10 +34,10 @@ const ContactShow = (props) => {
           variant: 'success'
         })
       })
+      .then(console.log(match.params.contactId))
       .then(() => history.push('/contacts'))
-      .then(() => indexContacts(user))
-      .then(console.log(user))
-      .then(console.log(match))
+      .then(setDeleted(true))
+      .then(console.log(contact))
       .catch(err => {
         msgAlert({
           heading: 'Deletion failed',
@@ -67,6 +51,10 @@ const ContactShow = (props) => {
   }
   const handleClose = () => {
     setClose(true)
+  }
+
+  if (deleted) {
+    return <Redirect to={'/contacts/'} />
   }
 
   if (close) {

@@ -63,7 +63,7 @@ const ContactUpdate = props => {
   }
 
   if (updatedContact) {
-    return <Redirect to={`/contacts/${props.match.params.contactId}`} />
+    return <Redirect to={'/contacts/'} />
   }
   // handleChange()
   // handleSubmit()

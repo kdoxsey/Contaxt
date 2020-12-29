@@ -68,11 +68,12 @@ class App extends Component {
           )} />
 
           <Route exact path='/' component={Landing} />
+
           <AuthenticatedRoute user={user} path='/contacts/:contactId' render={({ match }) => (
             <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
 
-          <AuthenticatedRoute user={user} path='/contacts' render={() => (
+          <AuthenticatedRoute user={user} exact path='/contacts' render={() => (
             <ContactIndex msgAlert={this.msgAlert} user={user} />
           )} />
 
