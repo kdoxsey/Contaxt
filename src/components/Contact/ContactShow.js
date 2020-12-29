@@ -51,6 +51,9 @@ const ContactShow = (props) => {
   const handleClose = () => {
     setClose(true)
   }
+  if (update) {
+    return <Redirect to={'/contact-update/' + contact._id} />
+  }
 
   if (deleted) {
     return <Redirect to={'/contacts/'} />
@@ -60,9 +63,6 @@ const ContactShow = (props) => {
     return <Redirect to={'/contacts/'} />
   }
 
-  if (update) {
-    return <Redirect to={'/contact-update/' + contact._id} />
-  }
   return (
     <div>
       <Fragment>
