@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ContactForm from '../Contact/ContactForm'
 import { Redirect } from 'react-router-dom'
+import ContactIndex from './ContactIndex'
 
 import { updateContact, showContact } from '../../api/contact'
 
@@ -78,6 +79,9 @@ const ContactUpdate = props => {
         match={match}
         user={user}
       />
+      <ContactIndex
+        user={props.user}
+        token={props.token}/>
     </div>
   )
 }

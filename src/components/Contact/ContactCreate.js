@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 
 import messages from '../AutoDismissAlert/messages'
 import ContactForm from '../Contact/ContactForm'
+import ContactIndex from './ContactIndex'
 
 import { createContact } from '../../api/contact'
 
@@ -64,6 +65,9 @@ const ContactCreate = props => {
         match={match}
         user={user}
       />
+      <ContactIndex
+        user={props.user}
+        token={props.token}/>
     </div>
   )
 }
