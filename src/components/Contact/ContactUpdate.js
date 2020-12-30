@@ -22,11 +22,6 @@ const ContactUpdate = props => {
   useEffect(() => {
     showContact(props.user, props.match.params.contactId)
       .then(res => setContact(res.data.contact))
-      .then(() => msgAlert({
-        heading: 'Contact show success',
-        message: 'check it out',
-        variant: 'success'
-      }))
       .catch(err => msgAlert({
         heading: 'Task show failed',
         message: err.message,

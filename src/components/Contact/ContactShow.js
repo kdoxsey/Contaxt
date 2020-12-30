@@ -16,6 +16,7 @@ const ContactShow = (props) => {
       .then(res => {
         setContact(res.data.contact)
       })
+      .then(console.log('show request sent'))
       .catch(err => {
         msgAlert({
           heading: 'Show Contact Failed',
@@ -27,6 +28,7 @@ const ContactShow = (props) => {
 
   const handleDelete = () => {
     deleteContact(user, match.params.contactId)
+      .then(setDeleted(true))
       .then(() => {
         msgAlert({
           heading: 'Contact deleted',
@@ -34,9 +36,7 @@ const ContactShow = (props) => {
           variant: 'success'
         })
       })
-      .then(setDeleted(true))
       .then(() => history.push('/contacts'))
-      .then(console.log(contact))
       .catch(err => {
         msgAlert({
           heading: 'Deletion failed',
@@ -44,15 +44,13 @@ const ContactShow = (props) => {
           variant: 'danger'
         })
       })
+    console.log('end of delete handler')
   }
   const handleUpdate = () => {
     setUpdate(true)
   }
   const handleClose = () => {
     setClose(true)
-  }
-  if (update) {
-    return <Redirect to={'/contact-update/' + contact._id} />
   }
 
   if (deleted) {
@@ -63,6 +61,9 @@ const ContactShow = (props) => {
     return <Redirect to={'/contacts/'} />
   }
 
+  if (update) {
+    return <Redirect to={'/contact-update/' + contact._id} />
+  }
   return (
     <div>
       <Fragment>

@@ -8,7 +8,7 @@ const ContactIndex = (props) => {
   const [contacts, setContacts] = useState(null)
   const { user, msgAlert } = props
   useEffect(() => {
-    console.log('contacts is ' + contacts)
+    // console.log('contacts is ' + contacts)
     indexContacts(user)
       .then(res => setContacts(res.data.contacts))
       .catch(() => msgAlert({
@@ -20,8 +20,8 @@ const ContactIndex = (props) => {
   if (!contacts) {
     return <p>Loading...</p>
   }
-  console.log(props)
 
+  // console.log(props.user.contact)
   const contactIndex = contacts.map(contact => (
     <ContactCard
       key={contact._id}
