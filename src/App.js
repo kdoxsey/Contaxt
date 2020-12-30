@@ -21,13 +21,16 @@ class App extends Component {
 
     this.state = {
       user: null,
-      msgAlerts: []
+      msgAlerts: [],
+      contacts: []
     }
   }
 
   setUser = user => this.setState({ user })
 
   clearUser = () => this.setState({ user: null })
+
+  setContacts = () => this.setContacts({ contacts: this.contacts })
 
   deleteAlert = (id) => {
     this.setState((state) => {

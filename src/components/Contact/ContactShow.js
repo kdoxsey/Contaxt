@@ -10,11 +10,12 @@ const ContactShow = (props) => {
   const [update, setUpdate] = useState(false)
   const [close, setClose] = useState(false)
   const [deleted, setDeleted] = useState(false)
-  const { user, msgAlert, match, history } = props
+  const { user, msgAlert, match } = props
   useEffect(() => {
     showContact(user, match.params.contactId)
       .then(res => {
-        setContact(res.data.contact)
+        setContact(match.params.contactId)
+        console.log(res.data.contact)
       })
       .then(console.log('show request sent'))
       .catch(err => {
@@ -26,9 +27,10 @@ const ContactShow = (props) => {
       })
   }, [match.params.contactId])
 
-  const handleDelete = () => {
-    deleteContact(user, match.params.contactId)
-      .then(setDeleted(true))
+  const handleDelete = event => {
+    event.preventDefault()
+    deleteContact(user, contact)
+      .then(res => setDeleted(true))
       .then(() => {
         msgAlert({
           heading: 'Contact deleted',
@@ -36,7 +38,8 @@ const ContactShow = (props) => {
           variant: 'success'
         })
       })
-      .then(() => history.push('/contacts'))
+      // .then(setContacts([]))
+      .then(<Redirect to={'/'} />)
       .catch(err => {
         msgAlert({
           heading: 'Deletion failed',
@@ -54,15 +57,15 @@ const ContactShow = (props) => {
   }
 
   if (deleted) {
-    return <Redirect to={'/contacts/'} />
+    return <Redirect to={'/contacts'} />
   }
 
   if (close) {
-    return <Redirect to={'/contacts/'} />
+    return <Redirect to={'/contacts'} />
   }
 
   if (update) {
-    return <Redirect to={'/contact-update/' + contact._id} />
+    return <Redirect to={'/contact-update/' + contact.id} />
   }
   return (
     <div>

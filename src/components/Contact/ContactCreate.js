@@ -51,7 +51,7 @@ const ContactCreate = props => {
   }
 
   if (createdContactId) {
-    return <Redirect to={'/contacts/'} />
+    return <Redirect to={'/contacts'} />
   }
 
   return (
