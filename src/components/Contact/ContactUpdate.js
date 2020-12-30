@@ -23,7 +23,7 @@ const ContactUpdate = props => {
     showContact(props.user, props.match.params.contactId)
       .then(res => setContact(res.data.contact))
       .catch(err => msgAlert({
-        heading: 'Task show failed',
+        heading: 'contact show failed',
         message: err.message,
         variant: 'danger'
       }))

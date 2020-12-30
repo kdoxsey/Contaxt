@@ -15,7 +15,6 @@ const ContactShow = (props) => {
     showContact(user, match.params.contactId)
       .then(res => {
         setContact(match.params.contactId)
-        console.log(res.data.contact)
       })
       .then(console.log('show request sent'))
       .catch(err => {
@@ -65,7 +64,7 @@ const ContactShow = (props) => {
   }
 
   if (update) {
-    return <Redirect to={'/contact-update/' + contact.id} />
+    return <Redirect to={'/contact-update/' + match.params.contactId} />
   }
   return (
     <div>

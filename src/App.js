@@ -21,8 +21,8 @@ class App extends Component {
 
     this.state = {
       user: null,
-      msgAlerts: [],
-      contacts: []
+      msgAlerts: []
+      // contacts: []
     }
   }
 
@@ -30,7 +30,7 @@ class App extends Component {
 
   clearUser = () => this.setState({ user: null })
 
-  setContacts = () => this.setContacts({ contacts: this.contacts })
+  // setContacts = () => this.setContacts({ contacts: this.contacts })
 
   deleteAlert = (id) => {
     this.setState((state) => {
@@ -103,10 +103,5 @@ class App extends Component {
     )
   }
 }
-// <AuthenticatedRoute user={user} path='/task-show/:taskId' render={({ match }) => (
-//   <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
-// )} />
-// <AuthenticatedRoute user={user} path='/task-update/:taskId' render={({ match, history }) => (
-//   <ContactUpdate match={match} history={history} user={user} msgAlert={this.msgAlert} />
-// )} />
+
 export default App
