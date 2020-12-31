@@ -14,7 +14,7 @@ const ContactShow = (props) => {
   useEffect(() => {
     showContact(user, match.params.contactId)
       .then(res => {
-        setContact(match.params.contactId)
+        setContact(res.data.contact)
       })
       .then(console.log('show request sent'))
       .catch(err => {
@@ -28,7 +28,7 @@ const ContactShow = (props) => {
 
   const handleDelete = event => {
     event.preventDefault()
-    deleteContact(user, contact)
+    deleteContact(user, match.params.contactId)
       .then(res => setDeleted(true))
       .then(() => {
         msgAlert({
