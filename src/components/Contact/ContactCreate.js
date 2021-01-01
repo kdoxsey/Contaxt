@@ -57,6 +57,13 @@ const ContactCreate = props => {
   return (
     <div>
       <h3>add new contact</h3>
+      <p>* Fields required</p> <br />
+
+      <p>GeoCoding is not yet available on Contaxt. In the meantime, try adding these coordinates:</p>
+    New York: 40.7128, -74.0060 <br />
+    Boston: 42.3601, -71.0589 <br />
+    New Orleans: 29.9511, -90.07015 <br />
+    Miami: 25.7617, -80.1918 <br /> <br />
       <ContactForm
         contact={contact}
         handleChange={handleChange}
