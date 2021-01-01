@@ -142,7 +142,7 @@ const ContactForm = ({ contact, user, handleSubmit, handleChange, match }) => {
 
           <Form.Control
             type='text'
-            placeholder='Latitude'
+            placeholder='Latitude *'
             value={contact.latitude}
             name="latitude"
             onChange={handleChange}
@@ -150,7 +150,7 @@ const ContactForm = ({ contact, user, handleSubmit, handleChange, match }) => {
 
           <Form.Control
             type='text'
-            placeholder='Longitude'
+            placeholder='Longitude *'
             value={contact.longitude}
             name="longitude"
             onChange={handleChange}
