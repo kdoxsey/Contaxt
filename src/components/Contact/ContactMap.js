@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps'
-import { Link } from 'react-router-dom'
 import phoneIcon from './../Card/phone.png'
 import emailIcon from './../Card/email.png'
 import houseIcon from './../Card/house.png'
@@ -25,10 +24,10 @@ function Map (props) {
           onClick={() => {
             setSelectedContact(contact)
           }}
-          // icon={{
-          //   url: '/contaxt_marker.png',
-          //   scaledSize: new window.google.maps.Size(30, 40)
-          // }}
+          icon={{
+            url: '/contaxt_marker.png',
+            scaledSize: new window.google.maps.Size(30, 40)
+          }}
         />
       ))}
 
@@ -56,8 +55,7 @@ function Map (props) {
             <a href={'mailto:' + selectedContact.emailAddress}>{selectedContact.emailAddress}</a> <br />
 
             <img src={houseIcon} alt='' className='contactIcon' />
-            {selectedContact.streetAddress}<br />
-            <Link to={`/contacts/${selectedContact._id}`}>See More</Link>
+            {selectedContact.streetAddress}
           </div>
         </InfoWindow>
       )}
