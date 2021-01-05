@@ -17,8 +17,15 @@
 // //   background-color: #f9ddc5;
 // // }
 
-body {
+.background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
   background-image: url("https://laistassets.scprdev.org/i/5f94dab8aca8298a1d29dadf455d8485/5b71c8cfd217300008deddbf-eight.jpg");
+}
+#button {
 }
 
 .contactIcon {
@@ -32,19 +39,19 @@ body {
 //   font-style: italic;
 // }
 
-// .contactIndex {
-//   display: flex;
-//   flex-direction: column;
-//   margin: 0px;
-//   width: 250px;
-//   height: 100vh;
-//   overflow: scroll;
-// }
+.contactIndex {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  width: 250px;
+  height: 100vh;
+  overflow: scroll;
+}
 
-// .mapIndexComponent {
-//   display: flex;
-//   flex-direction: row;
-// }
+.mapIndexComponent {
+  display: flex;
+  flex-direction: row;
+}
 
 // .contactCard {
 //   margin: 5px;

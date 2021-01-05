@@ -13,6 +13,7 @@ import ContactCreate from './components/Contact/ContactCreate'
 import ContactShow from './components/Contact/ContactShow'
 import ContactUpdate from './components/Contact/ContactUpdate'
 import GetStarted from './components/GetStarted/GetStarted'
+import Header from './components/Header/Header'
 
 class App extends Component {
   constructor () {
@@ -49,6 +50,7 @@ class App extends Component {
 
     return (
       <Fragment>
+        <Header user={user} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}
@@ -82,7 +84,9 @@ class App extends Component {
             <ContactUpdate msgAlert={this.msgAlert} user={user} match={match} history={history} />
           )} />
 
-          {/* <AuthenticatedRoute user={user} path='/' component={ContactMap}/> */}
+          <AuthenticatedRoute user={user} path='/user-settings' render={({ match }) => (
+            <Header msgAlert={this.msgAlert} match={match} user={user} />
+          )} />
 
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />

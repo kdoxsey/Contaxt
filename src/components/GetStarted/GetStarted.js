@@ -1,6 +1,7 @@
 import React from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import { Button, Modal } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 function exampleReducer (state, action) {
   switch (action.type) {
@@ -15,14 +16,14 @@ function exampleReducer (state, action) {
 
 function GetStarted () {
   const [state, dispatch] = React.useReducer(exampleReducer, {
-    open: true,
+    open: false,
     dimmer: undefined
   })
   const { open, dimmer } = state
 
   return (
-    <div>
-      <Button
+    <div className="background">
+      <Button id="button"
         onClick={() => dispatch({ type: 'OPEN_MODAL', dimmer: 'blurring' })}
       >
         Get Started
@@ -35,7 +36,8 @@ function GetStarted () {
       >
         <Modal.Header>Contaxt - your contacts in context</Modal.Header>
         <Modal.Content>
-          Sign up | sign in
+          <Link to="/sign-up">Sign up</Link>
+          <Link to="/sign-in">Sign in</Link>
         </Modal.Content>
         <Modal.Actions>
           <Button negative onClick={() => dispatch({ type: 'CLOSE_MODAL' })}>
