@@ -1,23 +1,25 @@
-@import "~bootstrap/scss/bootstrap";
+// // .navbar_links {
+// //   background-color: #f9ddc5;
+// //   margin: 10px;
+// // }
 
-// .navbar_links {
-//   background-color: #f9ddc5;
-//   margin: 10px;
+// .about {
+//   // background-color: #f9ddc5;
+//   // width: fit-content;
+//   margin-left: 50px;
 // }
 
-.about {
-  // background-color: #f9ddc5;
-  // width: fit-content;
-  margin-left: 50px;
+// // .contactIndex {
+// //   background-color: #f9ddc5;
+// // }
+
+// // .navbar {
+// //   background-color: #f9ddc5;
+// // }
+
+body {
+  background-image: url("https://laistassets.scprdev.org/i/5f94dab8aca8298a1d29dadf455d8485/5b71c8cfd217300008deddbf-eight.jpg");
 }
-
-// .contactIndex {
-//   background-color: #f9ddc5;
-// }
-
-// .navbar {
-//   background-color: #f9ddc5;
-// }
 
 .contactIcon {
   width: 15px;
@@ -25,58 +27,57 @@
   margin-bottom: 5px;
 }
 
-.organizationNameInfoWindow {
-  font-size: 17px;
-  font-style: italic;
-}
-
-.contactIndex {
-  display: flex;
-  flex-direction: column;
-  margin: 0px;
-  width: 250px;
-  height: 100vh;
-  overflow: scroll;
-
-}
-
-.mapIndexComponent {
-  display: flex;
-  flex-direction: row;
-}
-
-.contactCard {
-  margin: 5px;
-}
-
-.about {
-  display: flex;
-  flex-direction: column;
-}
-
-// input[type="text"], textarea {
-//   background-color : #f9ddc5;
-// }
-//
-// input[type="email"], textarea {
-//   background-color : #f9ddc5;
-// }
-//
-// input[type="password"], textarea {
-//   background-color : #f9ddc5;
+// .organizationNameInfoWindow {
+//   font-size: 17px;
+//   font-style: italic;
 // }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-// body {
+// .contactIndex {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 0px;
+//   width: 250px;
 //   height: 100vh;
-//   justify-content: space-between;
+//   overflow: scroll;
 // }
 
-.col-sm-10 col-md-8 mx-auto mt-5 {
-  align-items: center;
-}
+// .mapIndexComponent {
+//   display: flex;
+//   flex-direction: row;
+// }
+
+// .contactCard {
+//   margin: 5px;
+// }
+
+// .about {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// // input[type="text"], textarea {
+// //   background-color : #f9ddc5;
+// // }
+// //
+// // input[type="email"], textarea {
+// //   background-color : #f9ddc5;
+// // }
+// //
+// // input[type="password"], textarea {
+// //   background-color : #f9ddc5;
+// // }
+
+// form {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+// }
+
+// // body {
+// //   height: 100vh;
+// //   justify-content: space-between;
+// // }
+
+// .col-sm-10 col-md-8 mx-auto mt-5 {
+//   align-items: center;
+// }

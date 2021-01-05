@@ -4,7 +4,6 @@ import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
-import Header from './components/Header/Header'
 import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
@@ -13,7 +12,7 @@ import ContactIndex from './components/Contact/ContactIndex'
 import ContactCreate from './components/Contact/ContactCreate'
 import ContactShow from './components/Contact/ContactShow'
 import ContactUpdate from './components/Contact/ContactUpdate'
-import Landing from './components/Landing/Landing'
+import GetStarted from './components/GetStarted/GetStarted'
 
 class App extends Component {
   constructor () {
@@ -50,7 +49,6 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Header user={user} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}
@@ -70,7 +68,7 @@ class App extends Component {
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
 
-          <Route exact path='/' component={Landing} />
+          <Route exact path='/' component={GetStarted} />
 
           <AuthenticatedRoute user={user} path='/contacts/:contactId' render={({ match }) => (
             <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
