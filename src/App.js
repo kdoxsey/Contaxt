@@ -49,57 +49,59 @@ class App extends Component {
     const { msgAlerts, user } = this.state
 
     return (
-      <Fragment>
-        <Header user={user} />
-        {msgAlerts.map((msgAlert, index) => (
-          <AutoDismissAlert
-            key={index}
-            heading={msgAlert.heading}
-            variant={msgAlert.variant}
-            message={msgAlert.message}
-            id={msgAlert.id}
-            deleteAlert={this.deleteAlert}
-          />
-        ))}
-        <main>
-          <Route path='/sign-up' render={() => (
-            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
+      <div className="app">
+        <Fragment>
+          <Header user={user} />
+          {msgAlerts.map((msgAlert, index) => (
+            <AutoDismissAlert
+              key={index}
+              heading={msgAlert.heading}
+              variant={msgAlert.variant}
+              message={msgAlert.message}
+              id={msgAlert.id}
+              deleteAlert={this.deleteAlert}
+            />
+          ))}
+          <main>
+            <Route path='/sign-up' render={() => (
+              <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+            )} />
 
-          <Route path='/sign-in' render={() => (
-            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
+            <Route path='/sign-in' render={() => (
+              <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            )} />
 
-          <Route exact path='/' component={Landing} />
+            <Route exact path='/' component={Landing} />
 
-          <AuthenticatedRoute user={user} path='/contacts/:contactId' render={({ match }) => (
-            <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
-          )} />
+            <AuthenticatedRoute user={user} path='/contacts/:contactId' render={({ match }) => (
+              <ContactShow msgAlert={this.msgAlert} user={user} match={match}/>
+            )} />
 
-          <AuthenticatedRoute user={user} exact path='/contacts' render={() => (
-            <ContactIndex msgAlert={this.msgAlert} user={user} />
-          )} />
+            <AuthenticatedRoute user={user} exact path='/contacts' render={() => (
+              <ContactIndex msgAlert={this.msgAlert} user={user} />
+            )} />
 
-          <AuthenticatedRoute user={user} path='/contact-update/:contactId' render={({ match, history }) => (
-            <ContactUpdate msgAlert={this.msgAlert} user={user} match={match} history={history} />
-          )} />
+            <AuthenticatedRoute user={user} path='/contact-update/:contactId' render={({ match, history }) => (
+              <ContactUpdate msgAlert={this.msgAlert} user={user} match={match} history={history} />
+            )} />
 
-          {/* <AuthenticatedRoute user={user} path='/' component={ContactMap}/> */}
+            {/* <AuthenticatedRoute user={user} path='/' component={ContactMap}/> */}
 
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
-            <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
-          )} />
+            <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+              <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+            )} />
 
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
-          )} />
+            <AuthenticatedRoute user={user} path='/change-password' render={() => (
+              <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )} />
 
-          <AuthenticatedRoute user={user} path='/create-contact' render={({ match }) => (
-            <ContactCreate msgAlert={this.msgAlert} match={match} user={user} />
-          )} />
+            <AuthenticatedRoute user={user} path='/create-contact' render={({ match }) => (
+              <ContactCreate msgAlert={this.msgAlert} match={match} user={user} />
+            )} />
 
-        </main>
-      </Fragment>
+          </main>
+        </Fragment>
+      </div>
     )
   }
 }
