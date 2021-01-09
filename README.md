@@ -8,7 +8,7 @@ A map-based address book
 - [Heroku Url](https://still-everglades-32605.herokuapp.com/)
 - [react-google-maps Documentation](https://tomchentw.github.io/react-google-maps/#documentation)
 
-https://imgur.com/WP5fcBJ
+![Screenshot](screenshot.png)
 
 ## User Stories
 
