@@ -31,7 +31,6 @@ const ContactUpdate = props => {
 
   const handleChange = event => {
     event.persist()
-    console.log('handleChange event is ' + event)
     setContact(prevContact => {
       const updatedField = { [event.target.name]: event.target.value }
       const editedContact = Object.assign({}, prevContact, updatedField)
@@ -40,7 +39,6 @@ const ContactUpdate = props => {
   }
 
   const handleSubmit = event => {
-    console.log('handleSubmit event is ' + event)
     event.preventDefault()
     updateContact(props.user, contact, props.match.params.contactId)
       .then(() => setUpdatedContact(true))
@@ -60,10 +58,7 @@ const ContactUpdate = props => {
   if (updatedContact) {
     return <Redirect to={'/contacts'} />
   }
-  // handleChange()
-  // handleSubmit()
-  // console.log([updatedContact, setUpdatedContact])
-  // console.log(contact)
+
   return (
     <div>
       <ContactForm

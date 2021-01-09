@@ -16,7 +16,6 @@ const ContactShow = (props) => {
       .then(res => {
         setContact(res.data.contact)
       })
-      .then(console.log('show request sent'))
       .catch(err => {
         msgAlert({
           heading: 'Show Contact Failed',
@@ -46,7 +45,6 @@ const ContactShow = (props) => {
           variant: 'danger'
         })
       })
-    console.log('end of delete handler')
   }
   const handleUpdate = () => {
     setUpdate(true)
