@@ -1,12 +1,14 @@
 # Contaxt
 
-- A map-based address book
+A map-based address book
 
 - [Hosted Site](https://kdoxsey.github.io/contaxt/)
 - [Client Repo](https://github.com/kdoxsey/contaxt)
 - [API Repo](https://github.com/kdoxsey/api-contaxt)
 - [Heroku Url](https://still-everglades-32605.herokuapp.com/)
 - [react-google-maps Documentation](https://tomchentw.github.io/react-google-maps/#documentation)
+
+https://imgur.com/WP5fcBJ
 
 ## User Stories
 
@@ -58,7 +60,8 @@
 
 ## ERD & Wireframes
 
-[ERD](https://imgur.com/N1HYlRy)
+[ERD]
+(https://imgur.com/N1HYlRy)
 
 [WIREFRAMES]
 
