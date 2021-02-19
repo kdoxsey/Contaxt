@@ -31,6 +31,8 @@ const Header = ({ user }) => (
       href="#/">
       Contaxt
     </Navbar.Brand>
+    <p id="slogan">your contacts in context
+    </p>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">

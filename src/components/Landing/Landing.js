@@ -2,8 +2,7 @@ import React, { Fragment } from 'react'
 
 const Landing = () => (
   <Fragment>
-    <p>your contacts in context
-    </p>
+    <img src="https://github.com/kdoxsey/contaxt/blob/main/screenshot.png?raw=true" id="screenshot"/>
   </Fragment>
 )
 
