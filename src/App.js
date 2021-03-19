@@ -14,6 +14,7 @@ import ContactCreate from './components/Contact/ContactCreate'
 import ContactShow from './components/Contact/ContactShow'
 import ContactUpdate from './components/Contact/ContactUpdate'
 import Landing from './components/Landing/Landing'
+import NationalParks from './components/NationalParks/NationalParks'
 
 class App extends Component {
   constructor () {
@@ -78,6 +79,10 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} exact path='/contacts' render={() => (
             <ContactIndex msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} exact path='/national-parks' render={() => (
+            <NationalParks msgAlert={this.msgAlert} user={user} />
           )} />
 
           <AuthenticatedRoute user={user} path='/contact-update/:contactId' render={({ match, history }) => (
